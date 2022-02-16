@@ -8,7 +8,10 @@
 <template>
 <div>1</div>
  <a-scene embedded arjs>
-      <a-marker type="pattern" url="https://fateofking.github.io/arDemo/ikea.patt" 
+   <!-- type="pattern" 
+      url="https://fateofking.github.io/arDemo/ikea.patt" -->
+      <a-marker 
+       preset="hiro"
       emitevents="true" 
       smooth="true" 
       smoothCount="10"
