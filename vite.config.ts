@@ -5,6 +5,6 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig(({ command, mode })=>{
  return{ 
    plugins: [vue()],
-    publicDir: command === 'serve'? undefined :'/arDemo/'
+   base: command === 'serve'? './' :'/arDemo/'
 }
 })
