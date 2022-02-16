@@ -4,13 +4,16 @@
 </script>
 
 <template>
-  <a-scene
+<div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+<a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <!-- 这里是图像标记的配置，下面的url就是图像标记文件的地址，在官方示例中这里使用了cors代理避免跨域问题，作者在这里并没有进行更改 -->
+    <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
       url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
@@ -19,7 +22,6 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <!-- 这里是一个模型实体，gltf-model是模型的地址，在官方示例中这里同样使用了cors代理避免跨域问题，作者在这里并没有进行更改 -->
       <a-entity
         gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
         scale="5 5 5"
@@ -29,7 +31,6 @@
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
-
 </template>
 
 <style>
@@ -41,8 +42,7 @@
   color: #2c3e50;
   margin-top: 60px;
 }
-/*加载过程中蒙罩的css*/
-  .arjs-loader {
+.arjs-loader {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -54,6 +54,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
