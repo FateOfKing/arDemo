@@ -1,5 +1,6 @@
 
 # 构建
+yarn
 yarn build
 git add .
 git commit -m 'build'
