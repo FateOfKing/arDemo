@@ -10,13 +10,14 @@
  <a-scene embedded arjs>
    <!-- type="pattern" 
       url="https://fateofking.github.io/arDemo/ikea.patt" -->
-      <a-marker 
-       preset="hiro"
-      emitevents="true" 
+       <!-- emitevents="true" 
       smooth="true" 
       smoothCount="10"
       smoothTolerance=".01"
-      smoothThreshold="5">
+      smoothThreshold="5" -->
+      <a-marker 
+       preset="hiro"
+     >
         <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
