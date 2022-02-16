@@ -6,6 +6,7 @@
 </script>
 
 <template>
+<div>1</div>
  <a-scene embedded arjs>
       <a-marker type="pattern" url="https://fateofking.github.io/arDemo/ikea.patt" 
       emitevents="true" 
