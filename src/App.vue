@@ -1,12 +1,19 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-
+window.AFRAME.registerComponent('markerhandler', {
+    init: function () {
+      this.el.sceneEl.addEventListener('markerFound', () => {
+        // redirect to custom URL e.g. google.com
+        window.location.href = 'https://www.baidu.com/';
+      })
+    }
+  });
 
 </script>
 
 <template>
-<div>4</div>
+<div>5</div>
  <a-scene embedded arjs>
    <!-- type="pattern" 
       url="https://fateofking.github.io/arDemo/ikea.patt" -->
@@ -17,6 +24,7 @@
       smoothThreshold="5" -->
       <a-marker 
        preset="hiro"
+       emitevents="true"
      >
         <a-entity
           position="0 0 0"
