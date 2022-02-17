@@ -30,7 +30,6 @@ const href = window.location.href;
       smoothThreshold="5" -->
       <a-marker 
        preset="hiro"
-       emitevents="true"
      >
         <a-entity
           position="0 0 0"
