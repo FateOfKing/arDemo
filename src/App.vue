@@ -1,15 +1,21 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-window.AFRAME.registerComponent('markerhandler', {
-    init: function () {
-      this.el.sceneEl.addEventListener('markerFound', () => {
-        // redirect to custom URL e.g. google.com
-        window.location.href = 'https://www.baidu.com/';
-      })
-    }
-  });
 
+import { onMounted } from "@vue/runtime-core";
+
+// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+onMounted(()=>{
+  // window.AFRAME.registerComponent('markerhandler', {
+  //   init: function () {
+  //     this.el.sceneEl.addEventListener('markerFound', () => {
+  //       // redirect to custom URL e.g. google.com
+  //       window.location.href = 'https://www.baidu.com/';
+  //     })
+  //   }
+  // });
+})
+
+const href = window.location.href;
 </script>
 
 <template>
@@ -29,7 +35,7 @@ window.AFRAME.registerComponent('markerhandler', {
         <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
-          :gltf-model="window.location.host+'/arrow.gltf'"
+          :gltf-model="href+'scene.gltf'"
         ></a-entity>
        
       </a-marker>
