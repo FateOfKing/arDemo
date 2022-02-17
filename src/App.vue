@@ -29,7 +29,7 @@ window.AFRAME.registerComponent('markerhandler', {
         <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
-          gltf-model="https://fateofking.github.io/arDemo/arrow.gltf"
+          :gltf-model="window.location.host+'/arrow.gltf'"
         ></a-entity>
        
       </a-marker>

@@ -7,6 +7,6 @@ export default defineConfig(({ command, mode })=>{
   
  return{ 
    plugins: [vue()],
-   base: command === 'serve'? '/' :'/arDemo/'
+  //  base: command === 'serve'? '/' :'/arDemo/'
 }
 })
