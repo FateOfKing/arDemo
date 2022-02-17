@@ -6,7 +6,7 @@
 </script>
 
 <template>
-<div>3</div>
+<div>4</div>
  <a-scene embedded arjs>
    <!-- type="pattern" 
       url="https://fateofking.github.io/arDemo/ikea.patt" -->
