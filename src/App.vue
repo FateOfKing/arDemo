@@ -29,18 +29,9 @@ window.AFRAME.registerComponent('markerhandler', {
         <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+          gltf-model="https://fateofking.github.io/arDemo/arrow.gltf"
         ></a-entity>
-        <a-entity
-          position="0 0 1"
-          scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></a-entity>
-         <a-entity
-          position="0 0 2"
-          scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></a-entity>
+       
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
