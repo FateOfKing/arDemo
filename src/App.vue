@@ -23,14 +23,9 @@ const href = window.location.href;
 <div>5</div>
  
         <a-scene embedded arjs emitevents="true">
-      <a-marker preset="hiro">
-        <a-entity
-        
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
-          :gltf-model="'url('+href+'scene.gltf)'"
-        ></a-entity>
-      </a-marker>
+        <a-marker preset='hiro'>
+        <a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>
+    </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
 
