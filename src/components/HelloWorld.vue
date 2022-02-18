@@ -7,30 +7,28 @@ const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <a-scene embedded arjs>
+   <!-- type="pattern" 
+      url="https://fateofking.github.io/arDemo/ikea.patt" -->
+       <!-- emitevents="true" 
+      smooth="true" 
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5" -->
+      <a-marker 
+       preset="hiro"
+     >
+        <!-- <a-entity
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          :gltf-model="'url('+href+'scene.gltf)'"
+        ></a-entity> -->
+                <a-box position='0 0.5 0' material='color: green;opacity: 0.5'></a-box>
 
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
-
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+       
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
 </template>
 
 <style scoped>
