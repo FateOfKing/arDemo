@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ar-js-org/ar.js": "^3.3.3-es6-beta-03",
+    "a-frame": "^0.0.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
