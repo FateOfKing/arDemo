@@ -35,10 +35,17 @@
       <a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>
     </a-marker>
     <a-text
-        value="This content will always face you."
+        value="11111"
         look-at="[gps-camera]"
         scale="120 120 120"
-        position="0.5 0.5 0.5"
+        position="0 0 0"
+        gps-entity-place="latitude: 31.57888888888889; longitude: 120.36444444444444;"
+      ></a-text>
+      <a-text
+        value="22222"
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        position="1 1 1"
         gps-entity-place="latitude: 31.57888888888889; longitude: 120.36444444444444;"
       ></a-text>
     <a-camera gps-camera rotation-reader> </a-camera>
