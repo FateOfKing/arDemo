@@ -8,7 +8,7 @@
         console.log('markerhandler');
         this.el.sceneEl.addEventListener('markerFound', () => {
           // redirect to custom URL e.g. google.com
-          alert(camera.object3D.position.toString())
+          alert(camera.object3D.position.toString)
         })
       }
     });
@@ -26,9 +26,10 @@
             cameraPosition = camera.object3D.position;
             markerPosition = marker.object3D.position;
             distance = cameraPosition.distanceTo(markerPosition)
-
+            document.querySelector('a-marker').innerHTML = "<a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='0.5 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='1 0.5 0' material='color: red;opacity: 0.5'></a-box>";
             // do what you want with the distance:
-            console.log(distance);
+            alert(distance)
+            alert(cameraPosition.toString())
         }, 100);
     });
 
@@ -40,7 +41,6 @@
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <a-marker markerhandler preset="hiro">
-        <!-- <a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box> -->
 
       </a-marker>
       <a-entity camera></a-entity>
