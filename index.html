@@ -2,6 +2,16 @@
   <script src="aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="aframe-ar.js"></script>
+  <script>
+    AFRAME.registerComponent('markerhandler', {
+      init: function () {
+        this.el.sceneEl.addEventListener('markerFound', () => {
+          // redirect to custom URL e.g. google.com
+          alert(1)
+        })
+      }
+    });
+  </script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <a-marker preset="hiro">
