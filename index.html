@@ -7,6 +7,8 @@
       init: function () {
         console.log('markerhandler');
         this.el.sceneEl.addEventListener('markerFound', () => {
+          const camera = document.querySelector('[camera]');
+    const marker = document.querySelector('a-marker');
           // redirect to custom URL e.g. google.com
          const cameraPosition = camera.object3D.position;
          const markerPosition = marker.object3D.position;
@@ -19,8 +21,8 @@
       }
     });
 //     window.addEventListener('load', () => {
-//     const camera = document.querySelector('[camera]');
-//     const marker = document.querySelector('a-marker');
+    // const camera = document.querySelector('[camera]');
+    // const marker = document.querySelector('a-marker');
 //     let check;
 
 //     marker.addEventListener('markerFound', () => {
