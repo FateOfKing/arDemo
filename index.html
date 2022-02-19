@@ -1,1 +1,14 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/arDemo/favicon.ico"><script src="/arDemo/aframe.min.js"></script><script src="/arDemo/aframe-ar.js"></script><title>ar-nav</title><script defer="defer" src="/arDemo/js/chunk-vendors.578cdfce.js"></script><script defer="defer" src="/arDemo/js/app.d1b74aa1.js"></script></head><body><noscript><strong>We're sorry but ar-nav doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>
+
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
