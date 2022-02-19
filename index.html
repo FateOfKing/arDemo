@@ -5,6 +5,7 @@
   <script>
     AFRAME.registerComponent('markerhandler', {
       init: function () {
+        console.log('markerhandler');
         this.el.sceneEl.addEventListener('markerFound', () => {
           // redirect to custom URL e.g. google.com
           alert(1)
