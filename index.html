@@ -1,57 +1,60 @@
 <html>
-  <script src="aframe.min.js"></script>
-  <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="aframe-ar.js"></script>
-  <script>
-    AFRAME.registerComponent('markerhandler', {
-      init: function () {
-        console.log('markerhandler');
-        this.el.sceneEl.addEventListener('markerFound', () => {
-          const camera = document.querySelector('[camera]');
-    const marker = document.querySelector('a-marker');
-          // redirect to custom URL e.g. google.com
-         const cameraPosition = camera.object3D.position;
-         const markerPosition = marker.object3D.position;
-            distance = cameraPosition.distanceTo(markerPosition)
-            document.querySelector('a-marker').innerHTML = "<a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='1 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='2 0.5 0' material='color: red;opacity: 0.5'></a-box>";
-            // do what you want with the distance:
-            alert(distance)
-            alert(`${cameraPosition.x},${cameraPosition.y},${cameraPosition.z}`)
-        })
-      }
-    });
-//     window.addEventListener('load', () => {
-    // const camera = document.querySelector('[camera]');
-    // const marker = document.querySelector('a-marker');
-//     let check;
+<script src="aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="aframe-ar.js"></script>
+<script>
+  AFRAME.registerComponent('markerhandler', {
+    init: function () {
+      console.log('markerhandler');
+      this.el.sceneEl.addEventListener('markerFound', () => {
+        const camera = document.querySelector('[camera]');
+        const marker = document.querySelector('a-marker');
+        // redirect to custom URL e.g. google.com
+        const cameraPosition = camera.object3D.position;
+        const markerPosition = marker.object3D.position;
+        distance = cameraPosition.distanceTo(markerPosition)
+        document.querySelector('a-scene').innerHTML =
+          `<a-marker markerhandler preset='hiro'></a-marker><a-entity camera></a-entity><a-box position='${markerPosition.x} ${markerPosition.y+0.5} ${markerPosition.z}' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='${markerPosition.x+1} ${markerPosition.y+0.5} ${markerPosition.z}' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='${markerPosition.x+2} ${markerPosition.y+0.5} ${markerPosition.z}' material='color: red;opacity: 0.5'></a-box>`;
+        // do what you want with the distance:
+        alert(`${markerPosition.x},${markerPosition.y},${markerPosition.z}`)
+      })
 
-//     marker.addEventListener('markerFound', () => {
-//         let cameraPosition = camera.object3D.position;
-//         let markerPosition = marker.object3D.position;
-//         let distance = cameraPosition.distanceTo(markerPosition)
+    }
+  });
+  //     window.addEventListener('load', () => {
+  // const camera = document.querySelector('[camera]');
+  // const marker = document.querySelector('a-marker');
+  //     let check;
 
-//         check = setInterval(() => {
-//             cameraPosition = camera.object3D.position;
-//             markerPosition = marker.object3D.position;
-//             distance = cameraPosition.distanceTo(markerPosition)
-//             document.querySelector('a-marker').innerHTML = "<a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='0.5 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='1 0.5 0' material='color: red;opacity: 0.5'></a-box>";
-//             // do what you want with the distance:
-//             alert(distance)
-//             alert(cameraPosition.toString())
-//         }, 100);
-//     });
+  //     marker.addEventListener('markerFound', () => {
+  //         let cameraPosition = camera.object3D.position;
+  //         let markerPosition = marker.object3D.position;
+  //         let distance = cameraPosition.distanceTo(markerPosition)
 
-//     marker.addEventListener('markerLost', () => {
-//       clearInterval(check);
-//     })
-// })
-  </script>
-  <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
-      <a-marker markerhandler preset="hiro">
+  //         check = setInterval(() => {
+  //             cameraPosition = camera.object3D.position;
+  //             markerPosition = marker.object3D.position;
+  //             distance = cameraPosition.distanceTo(markerPosition)
+  //             document.querySelector('a-marker').innerHTML = "<a-box position='0 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='0.5 0.5 0' material='color: red;opacity: 0.5'></a-box>\n\n<a-box position='1 0.5 0' material='color: red;opacity: 0.5'></a-box>";
+  //             // do what you want with the distance:
+  //             alert(distance)
+  //             alert(cameraPosition.toString())
+  //         }, 100);
+  //     });
 
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+  //     marker.addEventListener('markerLost', () => {
+  //       clearInterval(check);
+  //     })
+  // })
+</script>
+
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene embedded arjs>
+    <a-marker markerhandler preset="hiro">
+
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
 </html>
